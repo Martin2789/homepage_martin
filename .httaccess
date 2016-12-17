@@ -1,0 +1,11 @@
+//Rewrite to www
+Options +FollowSymLinks
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^example.com[nc]
+RewriteRule ^(.*)$ http://www.example.com/$1 [r=301,nc]
+//Change default directory page
+//DirectoryIndex martin.bretterhofer.at/wp/index.php
+Redirect /index.htm http://martin.bretterhofer.at/wp/
+#zum arbeiten mit PHP als CGI
+#AddHandler php56-cgi .php
+#php_value memory_limit 128M
